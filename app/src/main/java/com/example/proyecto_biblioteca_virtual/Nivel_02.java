@@ -75,7 +75,7 @@ public class Nivel_02 extends AppCompatActivity {
                 ).show();
 
                 //m = (String)  expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition);
-                m = (String) expandableListDetail.get(expandableListTitle.get(groupPosition)).get(2);
+                m = (String) expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition);
                 nivel_3.putExtra("Materia", m);
                 startActivity(nivel_3);
                 return false;
