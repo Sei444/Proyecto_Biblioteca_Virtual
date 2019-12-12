@@ -11,18 +11,19 @@ public class ExpandableListDataPump {
         LinkedHashMap<String, List<String>> expandableListDetail = new LinkedHashMap<String, List<String>>();
 
         List<String> grupoA = new ArrayList<String>();
-        grupoA.add("ALGEBRA I");
-        grupoA.add("CALCULO I");
-        grupoA.add("INTRODUCCION A LA PROGRAMACION");
-        grupoA.add("METODOLOGIA DE INVESTIGACION");
-        grupoA.add("FISICA GENERAL");
+        grupoA.add("Algebra 1");
+        grupoA.add("Calculo 1");
+        grupoA.add("Fisica General");
+        grupoA.add("Ingles 1");
+        grupoA.add("Introduccion A La Programacion");
+        grupoA.add("Metodologia De Investigacion");
 
         List<String> grupoB = new ArrayList<String>();
-        grupoB.add("ALGEBRA II");
-        grupoB.add("CALCULO II");
-        grupoB.add("MATEMATICA DISCRETA");
-        grupoB.add("ELEMENTOS DE PROGRAMACION");
-        grupoB.add("ARQUITECTURA DE COMPUTADORAS");
+        grupoB.add("Algebra 2");
+        grupoB.add("Arquitectura De Computadoras 1");
+        grupoB.add("Calculo 2");
+        grupoB.add("Elementos de Programacion Y Estructura De Datos");
+        grupoB.add("Matematica Discreta");
 
         List<String> grupoC = new ArrayList<String>();
         grupoC.add("ESTADISTICA I");
@@ -88,15 +89,15 @@ public class ExpandableListDataPump {
         grupoElec.add("INGLES III");
 
 
-        expandableListDetail.put("NivelA", grupoA);
-        expandableListDetail.put("NivelB", grupoB);
-        expandableListDetail.put("NivelC", grupoC);
-        expandableListDetail.put("NivelD", grupoD);
-        expandableListDetail.put("NivelE", grupoE);
-        expandableListDetail.put("NivelF", grupoF);
-        expandableListDetail.put("NivelG", grupoG);
-        expandableListDetail.put("NivelH", grupoH);
-        expandableListDetail.put("NivelI", grupoI);
+        expandableListDetail.put("Nivel A", grupoA);
+        expandableListDetail.put("Nivel B", grupoB);
+        expandableListDetail.put("Nivel C", grupoC);
+        expandableListDetail.put("Nivel D", grupoD);
+        expandableListDetail.put("Nivel E", grupoE);
+        expandableListDetail.put("Nivel F", grupoF);
+        expandableListDetail.put("Nivel G", grupoG);
+        expandableListDetail.put("Nivel H", grupoH);
+        expandableListDetail.put("Nivel I", grupoI);
         expandableListDetail.put("Electivas", grupoElec);
 
         return expandableListDetail;

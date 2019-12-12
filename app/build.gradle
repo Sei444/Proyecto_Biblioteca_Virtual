@@ -29,6 +29,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.firebase:firebase-database:18.0.0'
     implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-firestore:20.0.0'
+    implementation 'com.firebaseui:firebase-ui-auth:6.1.0'
+
+    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.google.firebase:firebase-storage:18.0.0'
+    implementation 'com.karumi:dexter:5.0.0'
+
+
 }
 
 apply plugin: 'com.google.gms.google-services'

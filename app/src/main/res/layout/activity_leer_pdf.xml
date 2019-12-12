@@ -4,18 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#176E81"
-    android:padding="10dp"
-    tools:context=".Nivel_02">
+    tools:context=".Leer_pdf">
 
-    <ExpandableListView
+    <com.github.barteksc.pdfviewer.PDFView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/expandable_listview"
-        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
-        android:divider="@android:color/darker_gray"
-        android:padding="5dp"
-        android:dividerHeight="0.5dp" />
+        android:id="@+id/pdfview"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtleer"
+        android:visibility="invisible"/>
 
 </RelativeLayout>
