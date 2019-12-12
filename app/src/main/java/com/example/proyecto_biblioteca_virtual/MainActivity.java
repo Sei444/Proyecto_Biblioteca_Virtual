@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
     //Metodo para ir al nivel 2 de "materias"
     public void Nivel_2(View view) {
         Intent nivel_2 = new Intent(this, Nivel_02.class);

@@ -88,6 +88,7 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         return convertView;
     }
 
+
     @Override
     public boolean hasStableIds() {
         return false;

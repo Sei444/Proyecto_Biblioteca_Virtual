@@ -37,9 +37,7 @@ public class Nivel_02 extends AppCompatActivity {
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener(){
             @Override
             public void onGroupExpand(int groupPosition) {
-                /*Toast.makeText(getApplicationContext(),
-                        expandableListTitle.get(groupPosition) + " List Expanded.",
-                        Toast.LENGTH_SHORT).show();*/
+
             }
         });
 
@@ -47,9 +45,6 @@ public class Nivel_02 extends AppCompatActivity {
 
             @Override
             public void onGroupCollapse(int groupPosition) {
-                /*Toast.makeText(getApplicationContext(),
-                        expandableListTitle.get(groupPosition) + " List Collapsed.",
-                        Toast.LENGTH_SHORT).show();*/
 
             }
         });
@@ -62,16 +57,6 @@ public class Nivel_02 extends AppCompatActivity {
                 Intent nivel_3 = new Intent(Nivel_02.this, Nivel_03.class);
                 nivel_3.putExtra("nivel", expandableListTitle.get(groupPosition));
 
-                /*Toast.makeText(
-                        getApplicationContext(),
-                        expandableListTitle.get(groupPosition)
-                                + " -> "
-                                + expandableListDetail.get(
-                                expandableListTitle.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT
-                ).show();*/
-
-                //m = (String)  expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition);
                 m = (String) expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition);
                 nivel_3.putExtra("Materia", m);
                 startActivity(nivel_3);
