@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,35 +37,40 @@ public class Ver_o_Descargar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_o__descargar);
 
-        final String link = getIntent().getStringExtra("url");
-        zelda = link;
+        final String link = getIntent().getStringExtra("Url");
 
-        down = findViewById(R.id.btleer);
+        zelda = link.substring(35);
+
+        down = findViewById(R.id.btdesc);
         down.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Toast.makeText(getApplicationContext(),zelda,Toast.LENGTH_SHORT).show();
                 download();
             }
         });
     }
 
-    public void Leerpdf(View view) {
-        Intent leerpdf = new Intent(this, Leer_pdf.class);
-        startActivity(leerpdf);
-
-    }
 
     public void download(){
 
+        final String descargaurl= zelda;
+
+
+
+
+        Toast.makeText(getApplicationContext(),descargaurl,Toast.LENGTH_SHORT).show();
+
         storageReference = firebaseStorage.getInstance().getReference();
-        ref = storageReference.child("Algebra/Historia_de_Internet.pdf");
+        //ref = storageReference.child("/Nivel B/Matematica Discreta/Combinatoria.pdf");
+        ref = storageReference.child(descargaurl);
 
         ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
 
                 String url = uri.toString();
-                downloadFiles(Ver_o_Descargar.this, "historia", ".pdf", DIRECTORY_DOWNLOADS,url);
+                downloadFiles(Ver_o_Descargar.this,descargaurl, ".pdf", DIRECTORY_DOWNLOADS,url);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

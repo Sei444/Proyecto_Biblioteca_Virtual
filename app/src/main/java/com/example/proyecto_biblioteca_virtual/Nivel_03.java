@@ -17,16 +17,22 @@ import com.google.android.gms.tasks.OnSuccessListener;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 
 
 public class Nivel_03 extends AppCompatActivity {
 
 
     private TextView tb;
-    int numB = 10;
+    int numB = 20;
     int i;
-    String url;
+
     FirebaseFirestore mFirestore;
+    FirebaseStorage sFirestore;
+
+    StorageReference storageReference = FirebaseStorage.getInstance().getReference();
 
 
     @Override
@@ -35,6 +41,9 @@ public class Nivel_03 extends AppCompatActivity {
         setContentView(R.layout.activity_nivel_03);
 
         mFirestore = FirebaseFirestore.getInstance();
+
+
+
 
         final String nivel = getIntent().getStringExtra("nivel");
         final String materia = getIntent().getStringExtra("Materia");
@@ -64,31 +73,40 @@ public class Nivel_03 extends AppCompatActivity {
 
                         String res = String.valueOf(i);
                         String documentos = documentSnapshot.getString(res);
+
                         String Mat = documentSnapshot.getId();
                         crearBoton(documentos, botones, lp);
                     }
                 }
             }
         });
+
     }
 
     public void crearBoton(String documentos, LinearLayout botones, LinearLayout.LayoutParams lp){
+
         Button button = new Button(Nivel_03.this);
         button.setLayoutParams(lp);
         button.setText(documentos);
-        url = documentos;
-        button.setOnClickListener(new ButtonsOnCLickListener());
+        String url = (String) button.getText();
+        button.setOnClickListener(new ButtonsOnCLickListener(url));
         botones.addView(button);
     }
 
     class ButtonsOnCLickListener implements View.OnClickListener{
+        String t;
+
+
+        public ButtonsOnCLickListener(String url) {
+            t = url;
+        }
 
         @Override
         public void onClick(View v) {
             Intent nivel_4 = new Intent(Nivel_03.this , Ver_o_Descargar.class);
-            nivel_4.putExtra("Url", url);
+            nivel_4.putExtra("Url", t);
             startActivity(nivel_4);
-            Toast.makeText(getApplicationContext(),"Pulsado",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(),t,Toast.LENGTH_SHORT).show();
         }
     }
 
